@@ -1,4 +1,4 @@
-FROM jrottenberg/ffmpeg:3.3-alpine
+FROM jrottenberg/ffmpeg:4.0-alpine
 
 MAINTAINER Simon Erhardt <me+docker@rootlogin.ch>
 
