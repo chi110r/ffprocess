@@ -1,15 +1,15 @@
-FROM jrottenberg/ffmpeg:4.0-alpine
+FROM jrottenberg/ffmpeg:4.1-alpine
 
-MAINTAINER Simon Erhardt <me+docker@rootlogin.ch>
+MAINTAINER Andreas Fies <andreas.richard@fiese.info>
 
 ARG VCS_REF
 ARG BUILD_DATE
 
 LABEL org.label-schema.name="FFProcess" \
-      org.label-schema.description="A small docker container including ffmpeg to batch convert your media library to a defined h264/aac profile." \
+      org.label-schema.description="A small docker container including ffmpeg to batch convert your media library to a defined h264/aac profile for better compatibility for PS4. " \
       org.label-schema.vcs-ref=$VCS_REF \
       org.label-schema.build-date=$BUILD_DATE \
-      org.label-schema.vcs-url="https://github.com/chrootLogin/ffprocess"
+      org.label-schema.vcs-url="https://github.com/andreasrichardf/ffprocess"
 
 ADD ffprocess.py /usr/local/bin/ffprocess.py
 ADD requirements.txt /tmp/requirements.txt
