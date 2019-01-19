@@ -134,8 +134,6 @@ for root, dirnames, filenames in os.walk(str(args.folder)):
                             convertCmd.append("4")
                             convertCmd.append("-r")
                             convertCmd.append(str(args.rate))
-#####                            convertCmd.append("-pix_fmt")
-#####                            convertCmd.append("yuvj444p")
 
                             convertCmd += videoConvertCmd
                             reconvert = True
@@ -154,13 +152,11 @@ for root, dirnames, filenames in os.walk(str(args.folder)):
                         ffmpegCmd.append("-map")
                         ffmpegCmd.append("0:%d" % i)
 
-                        if stream['channel_layout'] == 'stereo' and not stream['codec_name'] == 'aac':
-                            logging.info("Audio codec is not aac, reconverting...")
+                        if not stream['codec_name'] == 'aac' and not stream['codec_name'] =='ac3':
+                            logging.info("Audio codec is not aac or ac3, reconverting...")
 
                             convertCmd.append("-c:a:"+str(audioStream))
                             convertCmd.append("libfdk_aac")
-                            convertCmd.append("-b:a:"+str(audioStream))
-                            convertCmd.append('128k')
 
                             reconvert = True
                         else:
@@ -174,7 +170,7 @@ for root, dirnames, filenames in os.walk(str(args.folder)):
                         ffmpegCmd.append("-map")
                         ffmpegCmd.append("0:%d" % i)
 
-                        convertCmd.append("-c:s:"+str(audioStream))
+                        convertCmd.append("-c:s:"+str(subtitleStream))
                         convertCmd.append("copy")
 
                         subtitleStream += 1
