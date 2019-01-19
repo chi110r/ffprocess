@@ -1,11 +1,11 @@
 # ffprocess
 
-[![](https://images.microbadger.com/badges/image/rootlogin/ffprocess.svg)](https://microbadger.com/images/rootlogin/ffprocess "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/rootlogin/ffprocess.svg)](https://microbadger.com/images/rootlogin/ffprocess "Get your own version badge on microbadger.com") [![](https://images.microbadger.com/badges/commit/rootlogin/ffprocess.svg)](https://microbadger.com/images/rootlogin/ffprocess "Get your own commit badge on microbadger.com")
-
+Fork of the grate the work of [rootlogin/ffprocess](https://github.com/rootlogin/ffprocess)
+ 
 A small docker container including ffmpeg to batch convert your media library to a defined h264/aac profile.
+improves compatibility for UNRAID
 
--> [DockerHub](https://hub.docker.com/r/rootlogin/ffprocess/)
--> [Quay.io](https://quay.io/repository/rootlogin/ffprocess)
+-> [DockerHub](https://hub.docker.com/r/andreasrichardf/ffprocess/)
 
 ## Features
 
@@ -18,6 +18,7 @@ A small docker container including ffmpeg to batch convert your media library to
 ## Dependencies when used standalone
    
  * FFMpeg with libfdk_aac, libx264 and any codec that you have in your library.
+ * Image based on the great work from [jrottenberg/ffmpeg](https://hub.docker.com/r/jrottenberg/ffmpeg/)
 
 ## Usage
 
@@ -41,7 +42,7 @@ optional arguments:
 
 **Standalone:**
 
-If you have ffmpeg and python installed on your computer, you can use this script directly, but I recommend to use the docker image, because there are already all needed codecs inside.
+If you have ffmpeg and python3 installed on your computer, you can use this script directly, but I recommend to use the docker image, because there are already all needed codecs inside.
 
 Install dependencies with `pip install -r requirements.txt`.
 
@@ -70,15 +71,19 @@ I'm very happy about every filed issue or pull-request.
 
 If you create a pull-request, please compare it against the "develop" branch.
 
+## Todo's
+
+ * how to for unraid
+ * template for Unraid
+ * run as service(???) 
+
 ## Warranty
 
 This software is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. It could even start a nuclear war or kill your kittens. ;)
 
 ## Donate
 
-If you want to donate for this project, you can send me some coins to the following address.
-
-**Bitcoin**: 1CCzVGMgoEbd5Zn84QnqjNFRj4PZtAoTrC
+If you want to donate for this project, do it by [rootlogin/ffprocess](https://github.com/rootlogin/ffprocess)
 
 ## License
 
